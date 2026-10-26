@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build and sign app bundle
-        run: ./build-mac-app.sh
+        run: |
+          chmod +x ./build-mac-app.sh
+          ./build-mac-app.sh
       - name: Archive app
         run: ditto -c -k --sequesterRsrc --keepParent DroidMirror.app DroidMirror-macOS.zip
       - uses: actions/upload-artifact@v4
