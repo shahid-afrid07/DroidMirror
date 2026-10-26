@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Resources/PhoneSymbol.png" alt="DroidMirror icon" width="180">
+  <img width="180" alt="1f409505b2977372e6ab2df6ae71737c9afb31f7c60a629c172f941bcf27da55 (2)" src="https://github.com/user-attachments/assets/918578ba-af21-4561-a408-fad3545173ea" />
 </p>
 
 <h1 align="center">DroidMirror</h1>
@@ -7,7 +7,8 @@
 <p align="center"><strong>Mirror your Android with Mac and Windows.</strong><br>
 Wireless Android screen mirroring and control, powered by scrcpy.</p>
 
-DroidMirror is a desktop companion for discovering Android phones on your Wi-Fi or phone hotspot, pairing through Android Wireless debugging, and opening a low-latency mirror with [scrcpy](https://github.com/Genymobile/scrcpy).
+DroidMirror is a desktop companion for discovering Android phones on your Wi-Fi or phone hotspot, pairing through Android 
+Wireless debugging, and opening a low-latency mirror with [scrcpy](https://github.com/Genymobile/scrcpy).
 
 ## Platforms
 
