@@ -1,0 +1,12 @@
+.DS_Store
+.build/
+.swiftpm/
+DroidMirror.app/
+outputs/
+work/
+Package.swift
+Sources/
+windows/bin/
+windows/obj/
+*.user
+*.suo
