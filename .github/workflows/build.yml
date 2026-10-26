@@ -1,0 +1,40 @@
+name: Build desktop apps
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    name: Build macOS app
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and sign app bundle
+        run: ./build-mac-app.sh
+      - name: Archive app
+        run: ditto -c -k --sequesterRsrc --keepParent DroidMirror.app DroidMirror-macOS.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DroidMirror-macOS
+          path: DroidMirror-macOS.zip
+          if-no-files-found: error
+
+  windows:
+    name: Build Windows app
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Publish x64 app
+        run: dotnet publish windows/DroidMirror.Windows.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DroidMirror-Windows-x64
+          path: windows/bin/Release/net8.0-windows/win-x64/publish/
+          if-no-files-found: error
